@@ -1,7 +1,14 @@
-/*
-Challenge:
-Make it so that when you click the 'Add to cart' button, whatever is written in the input field should be console logged.
-*/
+// Imports code from Firebase.google.com so that the initalizeApp function can be used
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js"
+
+  //web app's Firebase configuration
+const firebaseConfig = {
+}
+
+ // Initialize Firebase
+ const app = initializeApp(firebaseConfig)
+
+
 
 const inputFieldEl = document.getElementById("input-field")
 const addButtonEl = document.getElementById("add-button")
