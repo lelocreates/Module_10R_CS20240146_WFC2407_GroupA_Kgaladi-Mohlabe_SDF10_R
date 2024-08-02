@@ -4,8 +4,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/fireba
 // Imports database data from Firebase.google.com so that the initalizeApp function can be used
 import { getDatabase,
          ref,
-         push
- } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js"
+         push,
+         onValue } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js"
 
   //web app's Firebase configuration
 const firebaseConfig = {
