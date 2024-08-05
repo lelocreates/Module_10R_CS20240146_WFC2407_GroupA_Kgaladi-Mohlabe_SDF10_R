@@ -20,12 +20,12 @@ const firebaseConfig = {
  const referenceInDB = ref(database, "leads")
 
 
-
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
 const deleteBtn = document.getElementById("delete-btn")
 
+// Function to render the list of leads
 function render(leads) {
     let listItems = ""
     for (let i = 0; i < leads.length; i++) {
@@ -40,6 +40,7 @@ function render(leads) {
     ulEl.innerHTML = listItems
 }
 
+// Fetch leads from Firebase and render them
 onValue(referenceInDB, function(snapshot) {
     const snapshotDoesExist = snapshot.exists()
     if (snapshotDoesExist) {
@@ -49,11 +50,13 @@ onValue(referenceInDB, function(snapshot) {
     }
 })
 
+// Event listener to delete all leads on double click
 deleteBtn.addEventListener("dblclick", function() {
     remove(referenceInDB)
     ulEl.innerHTML = ""
 })
 
+// Event listener to save the entered URL
 inputBtn.addEventListener("click", function() {
     push(referenceInDB, inputEl.value)
     inputEl.value = "" 
